@@ -1,58 +1,57 @@
-
 package aplicación;
 
 public abstract class Empleado {
    
-    private String name;
-    private String email;
-    private String enterprise;
-    private String role; 
+    private String nombre;
+    private String correo;
+    private String empresa;
+    private String rol; 
 
     //Constructor//
-    public Empleado(String name, String email, String enterprise, String role) {
-        this.name = name;
-        this.email = email;
-        this.enterprise = enterprise;
-        this.role = role;
-    }
-    
-    public Empleado (){
-    
+
+    public Empleado(String nombre, String correo, String empresa, String rol) {
+        this.nombre = nombre;
+        this.correo = correo;
+        this.empresa = empresa;
+        this.rol = rol;
     }
 
+    public Empleado() {
+        
+    }
+    
     //Getter and Setter (Encapsulado)//
-    
-    public String getRole() {
-        return role;
+
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getName() {
-        return name;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
-    public String getEmail() {
-        return email;
+    public String getEmpresa() {
+        return empresa;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmpresa(String empresa) {
+        this.empresa = empresa;
     }
 
-    public String getEnterprise() {
-        return enterprise;
+    public String getRol() {
+        return rol;
     }
 
-    public void setEnterprise(String enterprise) {
-        this.enterprise = enterprise;
+    public void setRol(String rol) {
+        this.rol = rol;
     }
-    
     
 }
