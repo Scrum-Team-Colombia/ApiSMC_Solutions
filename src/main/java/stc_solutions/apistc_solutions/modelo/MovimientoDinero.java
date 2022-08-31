@@ -1,6 +1,16 @@
-package movimientodinero;
+package stc_solutions.apistc_solutions.modelo;
 
-public abstract class MovimientoDinero {
+import javax.persistence.*;
+
+@Entity
+@Table(name = "...") //Aqui falta agregar el nombre de la tabla a la cual esta asociada esta clase
+
+public class MovimientoDinero {
+
+    //Aqui falta la clave primaria para poder relacionar las tablas
+
+    //Falta agregar los column que relacionan los atributos con los campos pertenecen en la tabla
+    //dentro de las otras clases faltaria agregar la CARDINALIDAD e instancias de las clases y/o relacion entre las tablas//
 
     private Float monto;
     private String concepto;
@@ -14,8 +24,7 @@ public abstract class MovimientoDinero {
         this.empresa = empresa;
     }
 
-    public MovimientoDinero (){
-    
+    public MovimientoDinero (){    
     }
 
     public Float getMonto() {
@@ -49,5 +58,4 @@ public abstract class MovimientoDinero {
     public void setEmpresa(String empresa) {
         this.empresa = empresa;
     }
-
 }

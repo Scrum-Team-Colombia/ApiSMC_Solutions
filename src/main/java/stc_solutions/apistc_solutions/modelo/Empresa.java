@@ -1,32 +1,30 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+package stc_solutions.apistc_solutions.modelo;
 
-/**
- *
- * @author juanq
- */
+import javax.persistence.*;
+
+@Entity
+@Table(name = "...")
 public class Empresa {
+
     private String nombre;
     private String direccion;
-    private String telefono; 
+    private String telefono;
     private String nit;
-    
-    //Constructor//
-    public empresa(String nombre, String direccion, String telefono, String nit) {
+
+    // Constructor//
+    public void empresa(String nombre, String direccion, String telefono, String nit) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
         this.nit = nit;
     }
-    
-    public empresa (){
-    
+
+    public void empresa() {
+
     }
 
-    //Getter and Setter (Encapsulado)//
-    
+    // Getter and Setter (Encapsulado)//
+
     public String getnombre() {
         return nombre;
     }
@@ -58,5 +56,5 @@ public class Empresa {
     public void setnit(String nit) {
         this.nit = nit;
     }
-    
+
 }
