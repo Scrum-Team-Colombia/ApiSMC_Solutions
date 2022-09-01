@@ -3,7 +3,7 @@ package stc_solutions.apistc_solutions.modelo;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "...")
+@Table(name = "...")//Aqui falta agregar el nombre de la tabla a la cual esta asociada esta clase
 public class Empresa {
 
     private String nombre;
