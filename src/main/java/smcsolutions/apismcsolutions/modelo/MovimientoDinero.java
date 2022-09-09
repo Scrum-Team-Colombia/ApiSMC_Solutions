@@ -1,17 +1,14 @@
-package smcsolutions.apismcsolutions.modelo;
+package com.smcsolutions.smcsolutions.modelo;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "...") //Aqui falta agregar el nombre de la tabla a la cual esta asociada esta clase
-
+@Table(name = "MovimientoDinero")
 public class MovimientoDinero {
-
-    //Aqui falta la clave primaria para poder relacionar las tablas
-
-    //Falta agregar los column que relacionan los atributos con los campos pertenecen en la tabla
-    //dentro de las otras clases faltaria agregar la CARDINALIDAD e instancias de las clases y/o relacion entre las tablas//
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique=true, nullable=false)
+    private Long id;
     private Float monto;
     private String concepto;
     private String usuario;
@@ -57,5 +54,9 @@ public class MovimientoDinero {
     
     public void setEmpresa(String empresa) {
         this.empresa = empresa;
+    }
+
+    public Long getId() {
+        return null;
     }
 }
