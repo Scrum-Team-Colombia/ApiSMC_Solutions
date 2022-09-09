@@ -1,10 +1,10 @@
-package stc_solutions.apistc_solutions;
+package smcsolutions.apismcsolutions;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ApistcSolutionsApplicationTests {
+class ApismcSolutionsApplicationTests {
 
 	@Test
 	void contextLoads() {

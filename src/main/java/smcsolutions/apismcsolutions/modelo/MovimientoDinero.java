@@ -1,4 +1,4 @@
-package stc_solutions.apistc_solutions.modelo;
+package smcsolutions.apismcsolutions.modelo;
 
 import javax.persistence.*;
 
