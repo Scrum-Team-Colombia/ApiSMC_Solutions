@@ -111,7 +111,7 @@ public class Empresa {
     }
 
     public void setFechaActualizacion(LocalDate fechaActualizacion) {
-        this.fechaActualizaion = fechaActualizacion;
+        this.fechaActualizacion = fechaActualizacion;
     }
 
     @Override

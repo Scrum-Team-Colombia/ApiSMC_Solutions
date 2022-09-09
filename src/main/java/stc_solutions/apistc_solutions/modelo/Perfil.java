@@ -1,3 +1,5 @@
+package stc_solutions.apistc_solutions.modelo;
+
 import java.time.LocalDate;
 
 public class Perfil {
@@ -84,3 +86,4 @@ public class Perfil {
                 ", fechaActualizacion=" + fechaActualizacion +
                 '}';
     }
+}
