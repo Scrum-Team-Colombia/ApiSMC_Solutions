@@ -1,4 +1,4 @@
-package smcsolutions.apismcsolutions.controladores;
+package com.smcsolutions.smcsolutions.controladores;
 
 import java.util.ArrayList;
 

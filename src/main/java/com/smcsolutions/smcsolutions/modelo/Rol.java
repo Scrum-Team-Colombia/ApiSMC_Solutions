@@ -1,4 +1,4 @@
-package smcsolutions.apismcsolutions.modelo;
+package com.smcsolutions.smcsolutions.modelo;
 
 public class Rol {
     public enum Rol {

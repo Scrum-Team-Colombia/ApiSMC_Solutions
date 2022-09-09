@@ -1,4 +1,4 @@
-package smcsolutions.apismcsolutions;
+package com.smcsolutions.smcsolutions;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

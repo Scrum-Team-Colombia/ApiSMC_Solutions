@@ -1,4 +1,4 @@
-package smcsolutions.apismcsolutions.repositorios;
+package com.smcsolutions.smcsolutions.repositorios;
 
 import com.smcsolutions.smcsolutions.modelo.MovimientoDinero;
 

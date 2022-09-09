@@ -1,4 +1,4 @@
-package smcsolutions.apismcsolutions.services;
+package com.smcsolutions.smcsolutions.services;
 
 
 import java.util.ArrayList;

@@ -8,11 +8,11 @@
 		<version>2.7.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>stc_solutions</groupId>
-	<artifactId>apismcsolutions</artifactId>
+	<groupId>com.smcsolutions</groupId>
+	<artifactId>smcsolutions</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>apismcsolutions</name>
-	<description>Demo project for Spring Boot</description>
+	<name>smcsolutions</name>
+	<description>Sprint3UdeA</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -21,11 +21,16 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>org.postgresql</groupId>
@@ -34,8 +39,8 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>			
-		</dependency>		
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
