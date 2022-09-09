@@ -20,7 +20,7 @@ public class Empresa {
     private Empleado usuarios[];
     private MovimientoDinero movimientos[];
     private LocalDate fechaCreacion;
-    private LocalDate fechaActualizaion;
+    private LocalDate fechaActualizacion;
 
     
     // Constructor//
@@ -106,12 +106,12 @@ public class Empresa {
         this.fechaCreacion = fechaCreacion;
     }
 
-    public LocalDate getFechaActualizaion() {
-        return fechaActualizaion;
+    public LocalDate getFechaActualizacion() {
+        return fechaActualizacion;
     }
 
-    public void setFechaActualizaion(LocalDate fechaActualizaion) {
-        this.fechaActualizaion = fechaActualizaion;
+    public void setFechaActualizacion(LocalDate fechaActualizacion) {
+        this.fechaActualizaion = fechaActualizacion;
     }
 
     @Override
@@ -125,7 +125,7 @@ public class Empresa {
                 ", usuario=" + Arrays.toString(usuarios) +
                 ", movimientos=" + Arrays.toString(movimientos) +
                 ", fechaCreacion=" + fechaCreacion +
-                ", fechaActualizaion=" + fechaActualizaion +
+                ", fechaActualizacion=" + fechaActualizacion +
                 '}';
     }
 
