@@ -10,3 +10,5 @@ public interface EmpresaRepositorio extends CrudRepository<Empresa, Long> {
     public abstract ArrayList<Empresa> findAllByEmpresa(String empresa);{
     
 }
+
+    
