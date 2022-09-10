@@ -27,7 +27,7 @@ public class EmpresaController {
     
     @PostMapping("/guardar")
     public Empresa guardarEmpresa(@RequestBody Empresa empresa){
-        return this.empresa.guardarEmpresa(empresa);
+        return ((EmpresaController) this.empresa).guardarEmpresa(empresa);
     }
 
     @PatchMapping("/actualizar")
