@@ -10,9 +10,15 @@ import java.util.Arrays;
 public class Empresa {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_empresa")
-    private long idEmpresa;
+    private Long idempresa;
+    
+
+    public void setIdempresa(Long idempresa) {
+        this.idempresa = idempresa;
+    }
+
     private String nombre;
     private String nit;
     private String telefono;
@@ -42,12 +48,12 @@ public class Empresa {
 
      // Getter and Setter (Encapsulado)//
 
-    public long getIdEmpresa() {
-        return idEmpresa;
+     public Long getIdEmpresa() {
+        return idempresa;
     }
 
     public void setIdEmpresa(long idEmpresa) {
-        this.idEmpresa = idEmpresa;
+        this.idempresa = idEmpresa;
     }
 
     public String getNombre() {
@@ -117,7 +123,7 @@ public class Empresa {
     @Override
     public String toString() {
         return "Empresa{" +
-                "id=" + idEmpresa +
+                "id=" + idempresa +
                 ", nombre='" + nombre + '\'' +
                 ", nit='" + nit + '\'' +
                 ", telefono='" + telefono + '\'' +

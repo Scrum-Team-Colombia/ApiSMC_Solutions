@@ -1,5 +1,6 @@
 package com.smcsolutions.smcsolutions.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -11,39 +12,26 @@ import org.springframework.stereotype.Service;
 
 
 @Service
-public class EmpresaServicio implements IEmpresaServicio {
-    
+public class EmpresaServicio {
     @Autowired
-    private EmpresaRepository empresaRepository;
-    @Override
-    public List<Empresa> BuscarTodo() {
-    List<Empresa> Empresas = (List<Empresa>) EmpresaRepository.findAll();
-    return Empresas;
+    EmpresaRepositorio empresaRepositorio;
+    
+    public ArrayList<Empresa> obtenerEmpresas(){
+        return (ArrayList<Empresa>) empresaRepositorio.findAll();
+    }
+    public Empresa guardarEmpresas(Empresa empresa){
+        return empresaRepositorio.save(empresa);
     }
 
-    @Override
-    public Empresa crearEmpresa(Empresa empresa) {
-    Empresa newEmpresa = EmpresaRepository.save(empresa);
-    return newEmpresa;
+    public boolean eliminarMovimiento(Empresa empresa) {
+        return empresa.findById(empresa.getId()).map(empresa -> {
+            empresaRepositorio.delete(empresas);
+            return true;
+        }).orElse(false);
     }
 
-    @Override
-    public Empresa EncontrarId(Long id) {
-    Optional<Empresa> empresa = EmpresaRepository.findById(id);
-    return empresa.get();
+    public Optional<Empresa> obtenerPorId(Long id) {
+        return empresa.findById(id);
     }
 
-    @Override
-    public Empresa UpdateEmpresa(Long id, Empresa empresa) {
-    Empresa putEmpresa = empresaRepository.save(empresa);
-    return putEmpresa;
-
-    }
-
-    @Override
-    public void deleteEmpresa(Long id) {
-    empresaRepository.deleteById(id);
-
-    }
 }
-

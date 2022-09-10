@@ -14,20 +14,24 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
 @RequestMapping("/empresa")
 public class EmpresaController {
+    
     @Autowired
     EmpresaServicio empresaServicio;
-
+    
     @GetMapping("/obtener")
-    public ArrayList<Empresa> obtenerEmpresa(){
+    public ArrayList<Empresa> obtenerEmpresas(){
         return EmpresaServicio.obtenerEmpresa();
     }
-    
+        return empresaServicio.obtenerEmpresas();
+    }
+
     @PostMapping("/guardar")
     public Empresa guardarEmpresa(@RequestBody Empresa empresa){
-        return ((EmpresaController) this.empresa).guardarEmpresa(empresa);
+        return this.empresa.guardarEmpresa(empresa);
     }
 
     @PatchMapping("/actualizar")
