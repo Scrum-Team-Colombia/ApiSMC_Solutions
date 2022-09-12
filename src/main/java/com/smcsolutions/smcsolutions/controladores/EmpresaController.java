@@ -14,39 +14,35 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
 @RequestMapping("/empresa")
 public class EmpresaController {
     
     @Autowired
     EmpresaServicio empresaServicio;
-    
+
     @GetMapping("/obtener")
     public ArrayList<Empresa> obtenerEmpresas(){
-        return EmpresaServicio.obtenerEmpresa();
-    }
         return empresaServicio.obtenerEmpresas();
     }
-
+    
     @PostMapping("/guardar")
     public Empresa guardarEmpresa(@RequestBody Empresa empresa){
-        return this.empresa.guardarEmpresa(empresa);
+        return this.empresaServicio.guardarEmpresas(empresa);
     }
 
     @PatchMapping("/actualizar")
     public Empresa actualizarEmpresa(@RequestBody Empresa empresa){
-        return this.empresa.guardarEmpresa(empresa);
+        return this.empresaServicio.guardarEmpresas(empresa);
     }
 
     @DeleteMapping("/eliminar")
     public String eliminarEmpresa(@RequestBody Empresa empresa){
-        boolean ok = this.empresa.eliminarEmpresa(empresa);
+        boolean ok = this.empresaServicio.eliminarEmpresas(empresa);
         if(ok){
-            return "Se eliminó empresa con éxito";
+            return "Se eliminó la empresa con éxito";
         }else{
-            return "No se pudo eliminar empresa";
+            return "No se pudo eliminar la empresa";
         }
     }
-
 }

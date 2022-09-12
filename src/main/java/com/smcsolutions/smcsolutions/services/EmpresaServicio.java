@@ -1,7 +1,6 @@
 package com.smcsolutions.smcsolutions.services;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 import com.smcsolutions.smcsolutions.modelo.Empresa;
@@ -23,15 +22,27 @@ public class EmpresaServicio {
         return empresaRepositorio.save(empresa);
     }
 
+    /**
+     * @param empresa
+     * @return
+     */
     public boolean eliminarMovimiento(Empresa empresa) {
-        return empresa.findById(empresa.getId()).map(empresa -> {
-            empresaRepositorio.delete(empresas);
-            return true;
-        }).orElse(false);
+        return Empresa.findById(empresa.getId()).map(Empresa -> extracted()).orElse(false);
+    }
+    private Boolean extracted() {
+        empresaRepositorio.delete(guardarEmpresas(null));
+        return true;
     }
 
+    /**
+     * @param id
+     * @return
+     */
     public Optional<Empresa> obtenerPorId(Long id) {
-        return empresa.findById(id);
+        return Empresa.findById(id);
+    }
+    public boolean eliminarEmpresas(Empresa empresa) {
+        return false;
     }
 
 }

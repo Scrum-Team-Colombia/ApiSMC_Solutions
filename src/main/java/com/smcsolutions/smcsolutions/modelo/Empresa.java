@@ -1,9 +1,8 @@
 package com.smcsolutions.smcsolutions.modelo;
 
-import javax.persistence.*;
-import java.time.LocalDate;
-import java.util.Arrays;
+import java.util.Optional;
 
+import javax.persistence.*;
 
 @Entity
 @Table(name = "empresa")
@@ -11,49 +10,36 @@ public class Empresa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_empresa")
-    private Long idempresa;
-    
-
-    public void setIdempresa(Long idempresa) {
-        this.idempresa = idempresa;
-    }
-
+    @Column(unique = true, nullable = false)
+    private Long id;
     private String nombre;
     private String nit;
     private String telefono;
     private String direccion;
-    private Empleado usuarios[];
-    private MovimientoDinero movimientos[];
-    private LocalDate fechaCreacion;
-    private LocalDate fechaActualizacion;
 
-    
-    // Constructor//
-    public void empresa(String nombre, String direccion, String telefono, String nit, Empleado[] empleados, MovimientoDinero[] movimientos) {
+    /**
+     * @param nombre
+     * @param nit
+     * @param telefono
+     * @param direccion
+     */
+    public Empresa(String nombre, String nit, String telefono, String direccion) {
         this.nombre = nombre;
         this.nit = nit;
         this.telefono = telefono;
         this.direccion = direccion;
-        this.usuarios = empleados;
-        this.movimientos = movimientos;
-        this.fechaCreacion = LocalDate.now();;
+    }
+
+    public Empresa () {
         
-        
     }
 
-    public void empresa() {
-
+    public Long getId() {
+        return id;
     }
 
-     // Getter and Setter (Encapsulado)//
-
-     public Long getIdEmpresa() {
-        return idempresa;
-    }
-
-    public void setIdEmpresa(long idEmpresa) {
-        this.idempresa = idEmpresa;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -88,52 +74,8 @@ public class Empresa {
         this.direccion = direccion;
     }
 
-    public Empleado[] getUsuarios() {
-        return usuarios;
+    public static Optional<Empresa> findById(Long id2) {
+        return null;
     }
 
-    public void setUsuarios(Empleado[] usuarios) {
-        this.usuarios = usuarios;
-    }
-
-    public MovimientoDinero[] getMovimientos() {
-        return movimientos;
-    }
-
-    public void setMovimientos(MovimientoDinero[] movimientos) {
-        this.movimientos = movimientos;
-    }
-
-    public LocalDate getFechaCreacion() {
-        return fechaCreacion;
-    }
-
-    public void setFechaCreacion(LocalDate fechaCreacion) {
-        this.fechaCreacion = fechaCreacion;
-    }
-
-    public LocalDate getFechaActualizacion() {
-        return fechaActualizacion;
-    }
-
-    public void setFechaActualizacion(LocalDate fechaActualizacion) {
-        this.fechaActualizacion = fechaActualizacion;
-    }
-
-    @Override
-    public String toString() {
-        return "Empresa{" +
-                "id=" + idempresa +
-                ", nombre='" + nombre + '\'' +
-                ", nit='" + nit + '\'' +
-                ", telefono='" + telefono + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", usuario=" + Arrays.toString(usuarios) +
-                ", movimientos=" + Arrays.toString(movimientos) +
-                ", fechaCreacion=" + fechaCreacion +
-                ", fechaActualizacion=" + fechaActualizacion +
-                '}';
-    }
-
-    
 }
