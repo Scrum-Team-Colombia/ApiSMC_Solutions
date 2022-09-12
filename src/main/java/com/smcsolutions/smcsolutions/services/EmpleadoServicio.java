@@ -19,11 +19,11 @@ public class EmpleadoServicio {
     }
 
     public Empleado guardarEmpleado(Empleado empleado){
-        return empleado.save(empleado);
+        return empleadoRepositorio.save(empleado);
     }
 
     public boolean eliminarEmpleado(Empleado empleado) {
-        return empleadoRepositorio.findById(empleado.getId()).map(empleado -> {
+        return empleadoRepositorio.findById(empleado.getRol()).map(empleado -> {
             empleadoRepositorio.delete(empleado);
             return true;
         }).orElse(false);

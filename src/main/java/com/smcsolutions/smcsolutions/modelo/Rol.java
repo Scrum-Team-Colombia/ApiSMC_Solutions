@@ -1,9 +1,13 @@
 package com.smcsolutions.smcsolutions.modelo;
 
-public class Rol {
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Rol")
     public enum Rol {
         ADMIN(1, "Administrador"),
         USER(2, "Operario");
+
         private int idRol;
         private String descripcion;
     
@@ -36,4 +40,4 @@ public class Rol {
                     '}';
         }
     }
-}
+

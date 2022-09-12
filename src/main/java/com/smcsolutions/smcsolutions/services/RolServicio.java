@@ -3,34 +3,32 @@ package com.smcsolutions.smcsolutions.services;
 import java.util.ArrayList;
 import java.util.Optional;
 
-import com.smcsolutions.smcsolutions.modelo.RolModelo;
-import com.smcsolutions.smcsolutions.repositorios.RolRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
 @Service
-public class Rol {
+public class RolServicio {
     @Autowired
-    Rol rol;
+    RolServicio rol;
 
-    public ArrayList<Rol> obtenerRol(){
-        return (ArrayList<Rol>) rolRepositorio.findAll();
+    public ArrayList<RolServicio> obtenerRol(){
+        return (ArrayList<RolServicio>) rol. .findAll();
     }
 
-    public Rol guardarRol(Rol rol){
-        return rolRepositorio.save(rol);
+    public RolServicio guardarRol(RolServicio rol){
+        return rol.save(rol);
     }
 
-    public boolean eliminarRol(Rol rol) {
-        return rolRepositorio.findById(rol.getId()).map(rol -> {
+    public boolean eliminarRol(RolServicio rol) {
+        return rol.findById(rol.getId()).map(rol -> {
             rolRepositorio.delete(rol);
             return true;
         }).orElse(false);
     }
 
-    public Optional<Rol> obtenerPorId(Long id) {
-        return rolRepositorio.findById(id);
+    public Optional<RolServicio> obtenerPorId(Long id) {
+        return rol.findById(id);
     }
 
 }
