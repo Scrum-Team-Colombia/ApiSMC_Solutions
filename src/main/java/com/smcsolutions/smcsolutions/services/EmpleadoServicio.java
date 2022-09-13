@@ -22,12 +22,12 @@ public class EmpleadoServicio {
         return empleadoRepositorio.save(empleado);
     }
 
-    public boolean eliminarEmpleado(Empleado empleado) {
-        return empleadoRepositorio.findById(empleado.getRol()).map(empleado -> {
+   /* public boolean eliminarEmpleado(Empleado empleado) {
+        return empleadoRepositorio.findAllByEmpleado(empleado.getNombre()).map(empleado -> {
             empleadoRepositorio.delete(empleado);
             return true;
-        }).orElse(false);
-    }
+        }).orElse(false);*/
+    } 
 
     public Optional<Empleado> obtenerPorId(Long id) {
         return empleadoRepositorio.findById(id);

@@ -3,7 +3,7 @@ package com.smcsolutions.smcsolutions.controladores;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
+//import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,7 +36,7 @@ public class EmpleadoController {
         return this.empleado.guardarEmpleado(empleado);
     }
 
-    @DeleteMapping("/eliminar")
+   /*  @DeleteMapping("/eliminar")
     public String eliminarEmpleado(@RequestBody Empleado empleado){
         boolean ok = this.empleado.eliminarEmpleado(empleado);
         if(ok){
@@ -44,5 +44,5 @@ public class EmpleadoController {
         }else{
             return "No se pudo eliminar el movimiento";
         }
-    }
+    } */
 }
