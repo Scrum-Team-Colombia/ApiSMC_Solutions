@@ -69,16 +69,5 @@ public class Empresa {
     public void setEmpleado1(Empleado empleado1) {
         this.empleado1 = empleado1;
     }
-
-    @java.lang.Override
-    public java.lang.String toString() {
-        return "Empresa{" +
-                "nombre='" + nombre + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", telefono=" + telefono +
-                ", nit='" + nit + '\'' +
-                ", empleado1=" + this.empleado1 +
-                '}';
-    }
-
+    
 }
