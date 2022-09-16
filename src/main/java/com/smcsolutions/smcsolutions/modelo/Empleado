@@ -1,0 +1,80 @@
+package com.smcsolutions.Modelo;
+
+mport javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+@Entity
+@Table(name = "empleado")
+public class Empleado {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+    @Column(name = "nombre")
+    private String nombre;
+    @Column(name = "correo")
+    private String correo;
+    @Column(name = "empresaEmpleadoPertenece")
+    private String empresaEmpleadoPertenece;
+    @Column(name = "rolEmpleado")
+    private String rolEmpleado;
+
+    @Transient
+    Movimientodinero movimiento1;
+
+    public Empleado(String nombre, String correo, String empresaEmpleadoPertenece, String rolEmpleado, Movimientodinero movimiento1) {
+        this.nombre = nombre;
+        this.correo = correo;
+        this.empresaEmpleadoPertenece = empresaEmpleadoPertenece;
+        this.rolEmpleado = rolEmpleado;
+        this.movimiento1 = movimiento1;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getEmpresaEmpleadoPertenece() {
+        return empresaEmpleadoPertenece;
+    }
+
+    public void setEmpresaEmpleadoPertenece(String empresaEmpleadoPertenece) {
+        this.empresaEmpleadoPertenece = empresaEmpleadoPertenece;
+    }
+
+    public String getRolEmpleado() {
+        return rolEmpleado;
+    }
+
+    public void setRolEmpleado(String rolEmpleado) {
+        this.rolEmpleado = rolEmpleado;
+    }
+
+    public Movimientodinero getMovimiento1() {
+        return movimiento1;
+    }
+
+    public void setMovimiento1(Movimientodinero movimiento1) {
+        this.movimiento1 = movimiento1;
+    }
+
+   
+}
