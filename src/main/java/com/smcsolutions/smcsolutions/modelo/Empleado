@@ -1,4 +1,4 @@
-package com.smcsolutions.Modelo;
+package com.smcsolutions.smcsolutions.modelo;
 
 mport javax.persistence.Column;
 import javax.persistence.Entity;
