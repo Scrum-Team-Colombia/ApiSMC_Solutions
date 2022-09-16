@@ -9,14 +9,21 @@ import javax.persistence.Transient;
 @Table(name = "empresa")
 public class Empresa {
 
-
-    @Column(name = "nombre")
+    @Id 
+    @GeneratedValue(strategy = GenerationType.Auto)
+    @Column(name = "id", nullable = false, unique = true)
+    private Long id;
+    
+    @Column(name = "nombre", nullable = false, unique = true, length = 50)
     private String nombre;
-    @Column(name = "direccion")
+    
+    @Column(name = "direccion", nullable = false, length = 50)
     private String direccion;
-    @Column(name = "telefono")
+    
+    @Column(name = "telefono", length = 50)
     private int telefono;
-    @Column(name = "nit")
+    
+    @Column(name = "nit", nullable = false, unique = true, length = 50)
     private String nit;
 
     @Transient
