@@ -40,9 +40,9 @@ public class EmpleadoController {
     public String eliminarMovimiento(@RequestBody Empleado empleado){
         boolean ok = this.empleadoServicio.eliminarEmpleado(empleado);
         if(ok){
-            return "Se eliminó el movimiento con éxito";
+            return "Se eliminó el empleado con éxito";
         }else{
-            return "No se pudo eliminar el movimiento";
+            return "No se pudo eliminar el empleado";
         }
     }
 }
