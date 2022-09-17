@@ -22,7 +22,7 @@ public class EmpleadoController {
     EmpleadoServicio empleadoServicio;
 
     @GetMapping("/obtener")
-    public ArrayList<Empleado> obtenerEmpleados(){
+    public ArrayList<Empleado> obtenerEmpleados(){ 
         return empleadoServicio.obtenerEmpleados();
     }
     
