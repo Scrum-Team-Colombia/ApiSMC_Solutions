@@ -1,5 +1,6 @@
 package com.smcsolutions.smcsolutions.modelo;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -8,9 +9,8 @@ import javax.persistence.Transient;
 @Entity
 @Table(name = "empresa")
 public class Empresa {
-
     @Id 
-    @GeneratedValue(strategy = GenerationType.Auto)
+    @GeneratedValue(strategy = GenerationType.Auto) //el id no se genera automaticamente falta -->importar persistence<--
     @Column(name = "id", nullable = false, unique = true)
     private Long id;
     
@@ -25,10 +25,10 @@ public class Empresa {
     
     @Column(name = "nit", nullable = false, unique = true, length = 50)
     private String nit;
-
-    @Transient
+/*
+    @Transient  
     Empleado empleado1;
-
+*/
     public Empresa(String nombre, String direccion, int telefono, String nit, Empleado emp1) {
         this.nombre = nombre;
         this.direccion = direccion;
@@ -68,13 +68,13 @@ public class Empresa {
     public void setNit(String nit) {
         this.nit = nit;
     }
-
-    public Empleado getEmpleado1() {
+/*
+    public Empleado getEmpleado1() {    
         return empleado1;
     }
 
     public void setEmpleado1(Empleado empleado1) {
         this.empleado1 = empleado1;
     }
-    
+*/    
 }

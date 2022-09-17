@@ -1,4 +1,4 @@
-package scrumteamcolombia.smcsolutions.controllers;
+package scrumteamcolombia.smcsolutions.controllers; //el paquete esta diferente, en el modelo esta bien
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -7,7 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import scrumteamcolombia.smcsolutions.models.Empresa;
+import scrumteamcolombia.smcsolutions.models.Empresa; //el proyecto esta diferente, en el modelo esta bien
 
 @RestController
 @RequestMapping("/empresa")
