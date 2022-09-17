@@ -1,5 +1,6 @@
 package com.smcsolutions.smcsolutions.services;
 
+
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -22,14 +23,15 @@ public class EmpleadoServicio {
         return empleadoRepositorio.save(empleado);
     }
 
-   /* public boolean eliminarEmpleado(Empleado empleado) {
-        return empleadoRepositorio.findAllByEmpleado(empleado.getNombre()).map(empleado -> {
-            empleadoRepositorio.delete(empleado);
+    public boolean eliminarEmpleado(Empleado empleado) {
+        return empleadoRepositorio.findById(empleado.getId()).map(rol -> { /*Revisar si es rol*/
+            empleadoRepositorio.delete(rol);
             return true;
-        }).orElse(false);*/
-    } 
+        }).orElse(false);
+    }
 
     public Optional<Empleado> obtenerPorId(Long id) {
         return empleadoRepositorio.findById(id);
     }
+
 }
