@@ -1,16 +1,16 @@
 package com.smcsolutions.smcsolutions.modelo;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import java.util.ArrayList;
+
+import javax.persistence.*;
+
 
 @Entity
 @Table(name = "empresa")
 public class Empresa {
     @Id 
-    @GeneratedValue(strategy = GenerationType.Auto) //el id no se genera automaticamente falta -->importar persistence<--
+    @GeneratedValue(strategy = GenerationType.AUTO) //el id no se genera automaticamente falta -->importar persistence<--
     @Column(name = "id", nullable = false, unique = true)
     private Long id;
     
@@ -76,5 +76,9 @@ public class Empresa {
     public void setEmpleado1(Empleado empleado1) {
         this.empleado1 = empleado1;
     }
-*/    
+*/
+
+    public ArrayList<Empresa> obtenerEmpresas() {
+        return null;
+    }    
 }
