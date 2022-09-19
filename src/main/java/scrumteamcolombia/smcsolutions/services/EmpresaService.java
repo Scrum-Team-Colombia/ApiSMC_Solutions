@@ -6,7 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import scrumteamcolombia.smcsolutions.models.Empresa;   //el proyecto esta diferente, en el modelo esta bien
+import com.smcsolutions.smcsolutions.modelo.Empresa;
+
 import scrumteamcolombia.smcsolutions.repositories.EmpresaRepository;      //el proyecto esta diferente, en el modelo esta bien
 
 
