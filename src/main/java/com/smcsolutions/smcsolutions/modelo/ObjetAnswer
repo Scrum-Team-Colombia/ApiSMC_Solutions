@@ -1,4 +1,4 @@
-package scrummastercolombia.apiscrummastercolombia.modelo;
+package com.smcsolutions.smcsolutions.modelo;
 
 public class ObjetAnswer {
 
