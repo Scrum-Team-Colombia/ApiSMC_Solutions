@@ -1,5 +1,6 @@
 package com.smcsolutions.smcsolutions.modelo;
 
+import java.util.List;
 import javax.persistence.*;
 
 @Entity
@@ -10,10 +11,25 @@ public class Empleado {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique=true, nullable=false)
     private Long id;
+	
+	@Column(name = "nombre")
     private String nombre;
+	
+	@Column(name = "correo")
     private String correo;
+	
+	@Column(name = "empresa")
     private String empresa; 
+	
+	@Column(name = "rol")
     private String rol; 
+	
+	@OneToMany(mappedBy = "Empleado", cascade = CascadeType.ALL)
+    private List<Empleado> Empleado;	
+	
+	public Empleado (){   
+	
+    }
 
     public Empleado(String nombre, String correo, String empresa, String rol) {
         this.nombre = nombre;
@@ -22,9 +38,7 @@ public class Empleado {
         this.rol = rol;
     }
 
-    public Empleado (){    
-    }
-
+    
     public String getNombre() {
         return nombre;
     }
