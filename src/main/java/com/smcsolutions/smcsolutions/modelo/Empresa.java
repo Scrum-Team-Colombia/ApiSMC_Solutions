@@ -1,84 +1,128 @@
 package com.smcsolutions.smcsolutions.modelo;
-
-
-import java.util.ArrayList;
-
 import javax.persistence.*;
-
+import java.util.Date;
+import java.util.List;
 
 @Entity
-@Table(name = "empresa")
-public class Empresa {
-    @Id 
-    @GeneratedValue(strategy = GenerationType.AUTO) //el id no se genera automaticamente falta -->importar persistence<--
-    @Column(name = "id", nullable = false, unique = true)
-    private Long id;
-    
-    @Column(name = "nombre", nullable = false, unique = true, length = 50)
-    private String nombre;
-    
-    @Column(name = "direccion", nullable = false, length = 50)
-    private String direccion;
-    
-    @Column(name = "telefono", length = 50)
-    private int telefono;
-    
-    @Column(name = "nit", nullable = false, unique = true, length = 50)
-    private String nit;
-/*
-    @Transient  
-    Empleado empleado1;
-*/
-    public Empresa(String nombre, String direccion, int telefono, String nit, Empleado emp1) {
-        this.nombre = nombre;
-        this.direccion = direccion;
-        this.telefono = telefono;
-        this.nit = nit;
-        
+@Table(name ="Enterprises")
+public class Enterprise {
+    //Atributos
+    @Id
+    private Long idEnterprise;
+    @Column
+    private String nameEnterprise;
+    @Column
+    private String nitEnterprise;
+    @Column
+    private String phoneEnterprise;
+    @Column
+    private String addressEnterprise;
+
+    @OneToMany(mappedBy = "enterpriseTransaction")
+    private List<Transaction> transactions;
+
+    @OneToMany(mappedBy = "enterpriseEmployee")
+    private List<Employee> employees;
+
+    @Column
+    private Date createAtEnterprise;
+    @Column
+    private Date updateAtEnterprise;
+
+    @Column
+    private  java.sql.Date createdAtEnterprise;
+
+    //Generamos el constructor
+
+
+    public Enterprise(Long idEnterprise, String nameEnterprise, String nitEnterprise, String phoneEnterprise, String addressEnterprise, Date createAtEnterprise, Date updateAtEnterprise) {
+        this.idEnterprise = idEnterprise;
+        this.nameEnterprise = nameEnterprise;
+        this.nitEnterprise = nitEnterprise;
+        this.phoneEnterprise = phoneEnterprise;
+        this.addressEnterprise = addressEnterprise;
+
     }
 
-    public String getNombre() {
-        return nombre;
+    //generamos el constructor vacio
+
+    public Enterprise() {
+
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    //Generamos los setter and getters
+
+
+    public Long getIdEnterprise() {
+        return idEnterprise;
     }
 
-    public String getDireccion() {
-        return direccion;
+    public void setIdEnterprise(Long idEnterprise) {
+        this.idEnterprise = idEnterprise;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public String getNameEnterprise() {
+        return nameEnterprise;
     }
 
-    public int getTelefono() {
-        return telefono;
+    public void setNameEnterprise(String nameEnterprise) {
+        this.nameEnterprise = nameEnterprise;
     }
 
-    public void setTelefono(int telefono) {
-        this.telefono = telefono;
+    public String getNitEnterprise() {
+        return nitEnterprise;
     }
 
-    public String getNit() {
-        return nit;
+    public void setNitEnterprise(String nitEnterprise) {
+        this.nitEnterprise = nitEnterprise;
     }
 
-    public void setNit(String nit) {
-        this.nit = nit;
-    }
-/*
-    public Empleado getEmpleado1() {    
-        return empleado1;
+    public String getPhoneEnterprise() {
+        return phoneEnterprise;
     }
 
-    public void setEmpleado1(Empleado empleado1) {
-        this.empleado1 = empleado1;
+    public void setPhoneEnterprise(String phoneEnterprise) {
+        this.phoneEnterprise = phoneEnterprise;
     }
-*/
 
-    public ArrayList<Empresa> obtenerEmpresas() {
-        return null;
-    }    
+    public String getAddressEnterprise() {
+        return addressEnterprise;
+    }
+
+    public void setAddressEnterprise(String addressEnterprise) {
+        this.addressEnterprise = addressEnterprise;
+    }
+
+    public List<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(List<Transaction> transactions) {
+        this.transactions = transactions;
+    }
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
+    }
+
+    public Date getCreateAtEnterprise() {
+        return createAtEnterprise;
+    }
+
+    public void setCreateAtEnterprise(Date createAtEnterprise) {
+        this.createAtEnterprise = createAtEnterprise;
+    }
+
+    public Date getUpdateAtEnterprise() {
+        return updateAtEnterprise;
+    }
+
+    public void setUpdateAtEnterprise(Date updateAtEnterprise) {
+        this.updateAtEnterprise = updateAtEnterprise;
+    }
+
 }
